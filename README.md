@@ -1,3 +1,4 @@
+
 # HTTP/2 and HTTP/3 Traffic Analysis 
 
 ## Objective
@@ -50,3 +51,40 @@ Let's use the follow functionality on an HTTP/2 conversation.
 After selecting the HypterText Transfer Protocol dropdown in the packet details we see both frame types listed: HEADERS & WINDOW_UPDATE
 
 2. Now lets righ-click on the packet and select Follow > HTTP/2 stream
+
+![Screenshot 2025-02-03 140054](https://github.com/user-attachments/assets/0e1560c6-11c8-445d-8516-f77d72e143c1)
+We see a lot of binary that is tough to read, much different from the HTTP/1.1 conversation. 
+
+![Screenshot 2025-02-03 142314](https://github.com/user-attachments/assets/78ef4ca3-1b8c-4868-a7e8-834d61087603)
+
+When we followed the session for packet #630 there will be a filter that is automatically applied. Now all square breackets in the list are 15
+
+
+#### Viewing HTTP/2 Headers
+
+
+![Screenshot 2025-02-03 143248](https://github.com/user-attachments/assets/e0338d43-32a2-46d9-96fa-da4abb59ee3b)
+
+the HEADERS frames that contain the GET request and another for the response followed by a traditional 200 OK. The headers for a request are in separate frame types from the data sent related to that request. Separate
+
+CLick the GET request frame and in packet details, unfold the Hyptertext Transfer pRotocol 2 line, then expand Stream: HEADERS, and scroll
+
+
+
+<img width="1055" alt="Screenshot 2025-02-03 151542" src="https://github.com/user-attachments/assets/c1e48758-daaf-4a1d-98c5-d76ce94edcc9" />
+
+Now we can view the HTTP headers. To locate headers for a request, we find the HEADERS frame for the stream ID of interest, then unfold that specific frame in the packet details. 
+Another noticeable difference is for the domain name instead of bein Host: , it is not authority: 
+We can take a look at that using it as a column for our data by right-clicking and apply as column. 
+
+
+
+<img width="668" alt="Screenshot 2025-02-03 151944" src="https://github.com/user-attachments/assets/59d15a79-e53a-4a0f-9b63-19becdb9d30a" />
+
+
+### Extracting files from HTTP/2 Packet Capture
+
+Wireshark does not support
+
+
+<img width="1125" alt="Screenshot 2025-02-03 152251" src="https://github.com/user-attachments/assets/075c7d6a-930e-4b0c-89d9-cbf1142c0218" />
