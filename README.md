@@ -109,3 +109,15 @@ Then a dialog box will appear for you to save the jpg image to your desktop.
 ### HTTP/3 and QUIC 
 
 HTTP/3 also exists in this packet capture in decrypted form. To filter for HTTP/3 traffic use the filter http3. You will never see HTTP/3 content unless you are decrypting your traffic. 
+
+
+![Screenshot 2025-02-05 113953](https://github.com/user-attachments/assets/6eda6e33-3efb-405c-be90-ffd26b1c0af6)
+
+Stream identifiers are not in parenthesis ()  rather than [] square brackets. 
+QUIC also uses a randomly selected Source and Destination Connection ID which will showin the Info column as the DCID number 
+Wireshark is currently unable to decode the payload of HTTP/3 "QPACK" compression algorithm, so we are unable to understand what it means, we can see frame types. 
+
+#### QUIC protocol
+HTTP/3 traffic is wrapped inside packets utilizing QUIC protocol. QUIC is secure multiplexed data trnsport algorithm that utilizes UDP for the transport layer. It is able to tunnel any protocol and HTTP/3 is one protocol that uses it. 
+To find QUIC traffic: look for UDP port 443 by default. 
+
