@@ -82,9 +82,30 @@ We can take a look at that using it as a column for our data by right-clicking a
 <img width="668" alt="Screenshot 2025-02-03 151944" src="https://github.com/user-attachments/assets/59d15a79-e53a-4a0f-9b63-19becdb9d30a" />
 
 
+<img width="1125" alt="Screenshot 2025-02-03 152251" src="https://github.com/user-attachments/assets/075c7d6a-930e-4b0c-89d9-cbf1142c0218" />
+
+
 ### Extracting files from HTTP/2 Packet Capture
 
-Wireshark does not support
+Wireshark does not support, unable to use Export Objects with HTTP/2
+
+1. Bring up a single request to narrow in on.
 
 
-<img width="1125" alt="Screenshot 2025-02-03 152251" src="https://github.com/user-attachments/assets/075c7d6a-930e-4b0c-89d9-cbf1142c0218" />
+![Screenshot 2025-02-05 082040](https://github.com/user-attachments/assets/ed962ebd-54e7-44ce-b525-feab8b56fd0b)
+
+
+Now lets extract the file from this packet capture. 
+
+
+<img width="1008" alt="Screenshot 2025-02-05 082350" src="https://github.com/user-attachments/assets/9778cf3e-0ed6-4e4c-8556-799896cf4dec" />
+
+
+<img width="757" alt="Screenshot 2025-02-05 083652" src="https://github.com/user-attachments/assets/55edcf37-97f2-4f0d-b557-c24a8ab1cf0a" />
+
+
+Then a dialog box will appear for you to save the jpg image to your desktop. 
+
+### HTTP/3 and QUIC 
+
+HTTP/3 also exists in this packet capture in decrypted form. To filter for HTTP/3 traffic use the filter http3. You will never see HTTP/3 content unless you are decrypting your traffic. 
